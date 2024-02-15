@@ -12,8 +12,8 @@ app.get('/', (req, res) => {
 // New route for adding two numbers
 app.get('/add', (req, res) => {
     // Extracting two numbers from query parameters
-    const num1 = parseFloat(req.query.num1);
-    const num2 = parseFloat(req.query.num2);
+    const num1 = parseFloat(req.params.num1);
+    const num2 = parseFloat(req.params.num2);
 
     // Check if the numbers are valid
     if (!isNaN(num1) && !isNaN(num2)) {
