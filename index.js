@@ -10,18 +10,14 @@ app.get('/', (req, res) => {
 });
 
 // New route for adding two numbers
-app.get('/add', (req, res) => {
-    // Extracting two numbers from query parameters
+app.get('/add/:num1/:num2', (req, res) => {
     const num1 = parseFloat(req.params.num1);
     const num2 = parseFloat(req.params.num2);
 
-    // Check if the numbers are valid
     if (!isNaN(num1) && !isNaN(num2)) {
-        // Calculate the sum
         const sum = num1 + num2;
         res.send(`Sum: ${sum}`);
     } else {
-        // Send an error message for invalid input
         res.status(400).send('Invalid input. Please provide valid numbers.');
     }
 });
